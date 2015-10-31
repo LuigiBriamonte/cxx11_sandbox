@@ -10,28 +10,6 @@
 #include <cassert>
 using namespace std;
 
-// auto
-// constexpr
-// default, delete
-// enum type and class
-// delegate ctor
-// costants as variable template (C++14)
-// user-defined literals
-
-// type_traits
-// decltype
-// lambda
-// std::unique_ptr
-// uniform initialization
-// using vs typedef
-// variadic template
-// tuple
-// std::async, std:.future
-// std::chrono
-// std::lock
-// move semantics
-// noexcept
-// static_assert
 class Luigi
 {
 public:
