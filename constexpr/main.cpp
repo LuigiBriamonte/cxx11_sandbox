@@ -8,9 +8,10 @@
 #include <sstream>
 #include <algorithm>
 #include <cassert>
+
 using namespace std;
 
-class Luigi
+class Person
 {
 public:
   enum class KIDS
@@ -19,15 +20,15 @@ public:
 	  TWO
   };
   public:
-  explicit Luigi() : Luigi(33, KIDS::TWO)
+  explicit Person() : Person(33, KIDS::TWO)
   {}
 
-  Luigi(int p_age, KIDS p_nbKids = KIDS::ONE) : m_age(p_age), m_kids_number(p_nbKids)
-  { }
+  Person(int p_age, KIDS p_nbKids = KIDS::ONE) : m_age(p_age), m_kids_number(p_nbKids)
+  {  }
 
-  virtual ~Luigi() {}
+  virtual ~Person() {}
 
-  Luigi& operator= (const Luigi& other) = delete;
+  Person& operator= (const Person& other) = delete;
 
   template<int weight>
   constexpr void setWeight()
@@ -44,13 +45,13 @@ public:
 	  return l_str.str();
   }
 
-  friend std::ostream& operator<<(std::ostream& os, const Luigi& p_obj)
+  friend std::ostream& operator<<(std::ostream& os, const Person& p_obj)
   {
 	  return os << p_obj.toString();
   }
 
 private:
-  static constexpr int m_weight = 75.2;
+  static constexpr int m_weight = 75;
   int m_age;
   const KIDS m_kids_number;
 };
@@ -69,17 +70,15 @@ namespace luigi {
 	}
 
 	namespace Unit {
-		Luigi operator "" _aged(long double value1) {
-		  return Luigi((int)value1);
+		Person operator "" _aged(long double value1) {
+		  return Person((int)value1);
 		}
 	}
 }
 
 int main() {
-	cout << "MAIN" << endl; // prints
-
-	Luigi a;
-	Luigi b(12, Luigi::KIDS::TWO);
+	Person a;
+	Person b(12, Person::KIDS::TWO);
 
 	cout << a << endl;
 	cout << b << endl;
