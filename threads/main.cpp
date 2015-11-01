@@ -22,9 +22,9 @@ void count1m(int id) {
       std::unique_lock<std::mutex> lck (mtx);
       std::cout << "thread " << id << "- counter = " << i << std::endl;
   }
-  std::lock_guard<std::mutex> lck (mtx);
+  std::unique_lock<std::mutex> lck (mtx);
+  std::cout << "thread " << id << " - counter = " << i << " - sum.is_lock_free() = " << std::boolalpha << sum.is_lock_free() << '\n';
   sum += i;
-  std::cout << "thread " << id << " - counter = " << i << '\n';
 }
 
 int main ()
