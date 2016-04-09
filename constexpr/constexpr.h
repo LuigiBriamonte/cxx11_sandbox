@@ -76,7 +76,7 @@ namespace luigi {
 	}
 }
 
-int main() {
+int main_constexpr() {
 	Person a;
 	Person b(12, Person::KIDS::TWO);
 

@@ -63,7 +63,7 @@ void myCustomLoop(RandomAccessIterator first, RandomAccessIterator last, Compare
 	}
 }
 
-int main ()
+int main_lambda ()
 {
   std::array<Car, 3> l_MyObjs = { Car{"Ferrari", 1}, Car{"Lamborghini", 3}, Car{"BMW", 2} };
 
